@@ -1,0 +1,11 @@
+<!DOCTYPE StreamControl>
+<settings>
+ <altHotkeyHandling>0</altHotkeyHandling>
+ <format>2</format>
+ <games>
+  <game>SSBU</game>
+ </games>
+ <layoutPath>layout.xml</layoutPath>
+ <outputPath></outputPath>
+ <useCDATA>0</useCDATA>
+</settings>
