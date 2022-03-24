@@ -304,21 +304,19 @@ function init(){
 			TweenMax.to('#comms',nameTime,{css:{y:'+0px', opacity: 1},ease:Quad.easeOut,delay:nameDelay})
 			TweenMax.to('.comms',nameTime,{css:{x:'+0px', opacity: 1},ease:Quad.easeOut,delay:nameDelay})
 			TweenMax.to('.scores',scTime,{css:{x:'+0px', opacity: 1},ease:Quad.easeOut,delay:nameDelay})
-			TweenMax.to('.Labels',scTime,{css:{x:'+0px', opacity: 1},ease:Quad.easeOut,delay:nameDelay})
 			/*TweenMax.to('#round',rdTime,{css:{y:'+0px', opacity: 1},ease:Quad.easeOut,delay:rdDelay})
 			TweenMax.to('.regions',rdTime,{css:{y:'+0px', opacity: 1},ease:Quad.easeOut,delay:rdDelay})*/
 		}
 		else{
 			game = scObj['game'];
 			
-			if($('#p1Name').text() != p1Name || $('#p1Team').text() != p1Team || $('#p1Pronoun').text() != p1Pronoun){ //if either name or team do not match, fades out wrapper and updates them both
+			if($('#p1Name').text() != p1Name || $('#p1Team').text() != p1Team){ //if either name or team do not match, fades out wrapper and updates them both
 				TweenMax.to(p1NameAloneVar,.3,{css:{x: 0, opacity: 0},ease:Quad.easeOut,delay:0});
 				TweenMax.to('#p1Wrapper',.3,{css:{x: p1Move, opacity: 0},ease:Quad.easeOut,delay:0,onComplete:function(){ //uses onComplete parameter to execute function after TweenMax
 					$('#p1Wrapper').css('font-size',nameSize); //restores default font size based on variable set in scoreboard.html
 					$('#p1Name').html(p1Name); //updates name and team html objects with current json values
 					$('#p1Team').html(p1Team);
 					$('#p1NameAlone').html(p1Name);
-					$('#p1Pronoun').html(p1Pronoun);
 					
 					p1Wrap.each(function(i, p1Wrap){//same resize functions from above
 						while(p1Wrap.scrollWidth > p1Wrap.offsetWidth || p1Wrap.scrollHeight > p1Wrap.offsetHeight){
@@ -337,14 +335,13 @@ function init(){
 				}});
 			}
 			
-			if($('#p2Name').text() != p2Name || $('#p2Team').text() != p2Team || $('#p2Pronoun').text() != p2Pronoun){
+			if($('#p2Name').text() != p2Name || $('#p2Team').text() != p2Team){
 				TweenMax.to(p2NameAloneVar,.3,{css:{x: 0, opacity: 0},ease:Quad.easeOut,delay:0});
 				TweenMax.to('#p2Wrapper',.3,{css:{x: p2Move, opacity: 0},ease:Quad.easeOut,delay:0,onComplete:function(){
 					$('#p2Wrapper').css('font-size',nameSize);
 					$('#p2Name').html(p2Name);
 					$('#p2Team').html(p2Team);
-					$('#p2NameAlone').html(p2Name);
-					$('#p2Pronoun').html(p2Pronoun);					
+					$('#p2NameAlone').html(p2Name);					
 					
 					p2Wrap.each(function(i, p2Wrap){
 						while(p2Wrap.scrollWidth > p2Wrap.offsetWidth || p2Wrap.scrollHeight > p2Wrap.offsetHeight){
@@ -387,7 +384,7 @@ function init(){
 				}});
 			}
 
-			if($('#comm1').text() != comm1 || $('#comm1Pronoun').text() != comm1Pronoun){
+			if($('#comm1').text() != comm1){
 				TweenMax.to('#comm1Wrapper',.3,{css:{x: p1Move, opacity: 0},ease:Quad.easeOut,delay:0,onComplete:function(){
 					$('#comm1').html(comm1);
 					$('#comm1Pronoun').html(comm1Pronoun);			
@@ -404,7 +401,7 @@ function init(){
 				}});
 			}
 
-			if($('#comm2').text() != comm2 || $('#comm2Pronoun').text() != comm2Pronoun){
+			if($('#comm2').text() != comm2){
 				TweenMax.to('#comm2Wrapper',.3,{css:{x: p2Move, opacity: 0},ease:Quad.easeOut,delay:0,onComplete:function(){
 					$('#comm2').html(comm2);
 					$('#comm2Pronoun').html(comm2Pronoun);			
