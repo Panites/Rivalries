@@ -1,168 +1,28 @@
 <!DOCTYPE StreamControlLayout>
-<layout width="500" height="320" tabbed="1">
- <tab name="The only tab you need" tabbed="1">
-  <label x="65" y="10" width="46" height="13">Name</label>
-  <label x="255" y="10" width="46" height="13">Team</label>
-  <label x="340" y="10" width="46" height="13">Pronouns</label>
-  <label x="10" y="124" width="46" height="13">Score</label>
-  <label x="10" y="184" width="46" height="13">Comm1</label>
-  <label x="220" y="184" width="46" height="13">Comm2</label>
-  <label x="10" y="34" width="46" height="13">Player 1</label>
-  <label x="10" y="64" width="46" height="13">Player 2</label>
-  
-  <label x="70" y="94" width="46" height="13">Set1</label>
-  <label x="115" y="94" width="46" height="13">Set2</label>
-  <label x="160" y="94" width="46" height="13">Set3</label>
-  <label x="205" y="94" width="46" height="13">Set4</label>
-  <label x="250" y="94" width="46" height="13">Set5</label>
-  
-  
-  
-  <lineEdit id="p1Name" x="60" y="30" width="185" height="20" dataSet="players.csv" dataField="1"/>
-  <lineEdit id="p1Team" x="250" y="30" width="80" height="20" dataSet="players.csv" dataField="2" master="p1Name"/>
-  <lineEdit id="p1Pronoun" x="335" y="30" width="60" height="20" dataSet="players.csv" dataField="3" master="p1Name"/>
-  
-  <lineEdit id="p2Name" x="60" y="60" width="185" height="20" dataSet="players.csv" dataField="1"/>
-  <lineEdit id="p2Team" x="250" y="60" width="80" height="20" dataSet="players.csv" dataField="2" master="p2Name"/>
-  <lineEdit id="p2Pronoun" x="335" y="60" width="60" height="20" dataSet="players.csv" dataField="3" master="p2Name" />
-  
-  <!--Scores are a separate thing and we need five sets of spinboxes for scores-->
-  <spinBox id="s1p1Score" x="60" y="114" width="42" height="25" maximum="999" />
-  <spinBox id="s1p2Score" x="60" y="144" width="42" height="25" maximum="999" />
-  <spinBox id="s2p1Score" x="105" y="114" width="42" height="25" maximum="999" />
-  <spinBox id="s2p2Score" x="105" y="144" width="42" height="25" maximum="999" />
-  <spinBox id="s3p1Score" x="150" y="114" width="42" height="25" maximum="999" />
-  <spinBox id="s3p2Score" x="150" y="144" width="42" height="25" maximum="999" />
-  <spinBox id="s4p1Score" x="195" y="114" width="42" height="25" maximum="999" />
-  <spinBox id="s4p2Score" x="195" y="144" width="42" height="25" maximum="999" />
-  <spinBox id="s5p1Score" x="240" y="114" width="42" height="25" maximum="999" />
-  <spinBox id="s5p2Score" x="240" y="144" width="42" height="25" maximum="999" />
 
-  
-  <button type="swap" x="400" y="30" width="60" height="23" tooltip="Swap the Players and Scores" id="swap1" swapSet1="s1p1Score,s2p1Score,s3p1Score,s4p1Score,s5p1Score,p1Name,p1Team,p1Pronoun" swapSet2="s1p2Score,s2p2Score,s3p2Score,s4p2Score,s5p2Score,p2Name,p2Team,p2Pronoun">Swap</button>
-  <button type="reset" x="400" y="60" width="60" height="23" tooltip="Clear all" id="reset2" reset="p1Name,p1Team,p2Name,p2Team,p2Score,p1Pronoun,p2Pronoun">Clear</button>
-  
+<layout width="430" height="270" tabbed="1">
+	<tab name="Ranbats">
+		<label x="65" y="10" width="46" height="13">Name</label>
+		<label x="255" y="10" width="46" height="13">Score</label>
 
-  <lineEdit id="comm1" x="60" y="180" width="95" height="20" dataSet="players.csv" dataField="1"/>
-  <lineEdit id="comm1Pronoun" x="155" y="180" width="60" height="20" dataSet="players.csv" dataField="3" master="comm1"/>
-  <lineEdit id="comm2" x="265" y="180" width="95" height="20" dataSet="players.csv" dataField="1"/> 
-  <lineEdit id="comm2Pronoun" x="360" y="180" width="60" height="20" dataSet="players.csv" dataField="3" master="comm2" />
-  <button type="swap" x="430" y="180" width="60" height="23" tooltip="Swap commentators" id="swap2" swapSet1="comm1,comm1Pronoun" swapSet2="comm2,comm2Pronoun">Swap</button>
-  
-  
- </tab>
- <tab name="Game cam">
-  <!--Just labels lol-->
-  <label x="65" y="10" width="46" height="13">Name</label>
-  <label x="255" y="10" width="46" height="13">Team</label>
-  <label x="340" y="10" width="46" height="13">Pronouns</label>
-  <label x="405" y="10" width="46" height="13">Score</label>
-  <label x="450" y="10" width="46" height="13">Losers</label>
-  <label x="10" y="34" width="46" height="13">Player 1</label>
-  <label x="10" y="64" width="46" height="13">Player 2</label>
-  <label x="10" y="94" width="46" height="13">P1Region</label>
-  <label x="160" y="94" width="46" height="13">P2Region</label>
-  <label x="10" y="124" width="46" height="13">Round</label>
-  <label x="10" y="154" width="46" height="13">Comm1</label>
-  <label x="220" y="154" width="46" height="13">Comm2</label>
-  <label x="260" y="124" width="46" height="13">Game</label>
-  <!--line edits for all the items I want to feed to tournament page-->
-  <lineEdit id="p1Namex" x="60" y="30" width="185" height="20" dataSet="players.csv" dataField="1"/>
-  <lineEdit id="p1Teamx" x="250" y="30" width="80" height="20" dataSet="players.csv" dataField="2" master="p1Name"/>
-  <lineEdit id="p1Pronounx" x="335" y="30" width="60" height="20" dataSet="players.csv" dataField="3" master="p1Name"/>
-  <spinBox id="p1Scorex" x="400" y="29" width="42" height="25" maximum="999" />
-  <checkBox id="p1Loserx" x="460" y="34" width="16" height="16"></checkBox>
-  <lineEdit id="p2Namex" x="60" y="60" width="185" height="20" dataSet="players.csv" dataField="1"/>
-  <lineEdit id="p2Teamx" x="250" y="60" width="80" height="20" dataSet="players.csv" dataField="2" master="p2Name"/>
-  <lineEdit id="p2Pronounx" x="335" y="60" width="60" height="20" dataSet="players.csv" dataField="3" master="p2Name" />
-  <spinBox id="p2Scorex" x="400" y="59" width="42" height="25" maximum="999" />
-  <checkBox id="p2Loserx" x="460" y="64" width="16" height="16"></checkBox>
-  <!--Feel like the region line edit should not be editable because it'll link to sources directly, but don't know of a way to associate fields to master while also have it not be editable in some way-->
-  <lineEdit id="p1Region" x="60" y="90" width="90" height="20" dataSet="players.csv" dataField="4" master="p1Name" />
-  <lineEdit id="p2Region" x="210" y="90" width="90" height="20" dataSet="players.csv" dataField="4" master="p2Name" />
-  <button type="swap" x="310" y="90" width="60" height="23" tooltip="Swap the Players and Scores" id="swapx" swapSet1="p1Name,p1Team,p1Score,p1Region,p1Pronoun" swapSet2="p2Name,p2Team,p2Score,p2Region,p2Pronoun">Swap</button>
-  <button type="reset" x="370" y="90" width="60" height="23" tooltip="Reset the Scores" id="reset1" reset="p1Score,p2Score">Reset</button>
-  <button type="reset" x="430" y="90" width="60" height="23" tooltip="Clear all" id="reset2" reset="p1Name,p1Team,p1Score,p2Name,p2Team,p2Score,p1Region,p2Region,p1Pronoun,p2Pronoun">Clear</button>
-  <lineEdit id="round" x="60" y="120" width="180" height="20" dataSet="round.csv"/>
-  <!--The game should feed into tournament.html and tell the html what game we are running, to modify the stream elements-->
-  <comboBox id="game" x="300" y="120" width="190" height="20" editable="1" >
-  <comboItem selected="true" value="SSBU">Super Smash Bros Ultimate</comboItem>
-  <comboItem value="NASB">Nickelodeon All-Star Brawl</comboItem>
-  <comboItem value="RoA">Rivals of Aether</comboItem>
-  <comboItem value="SFV">Street Fighter V</comboItem>
-  <comboItem value="T7">Tekken 7</comboItem>
-  <comboItem value="GGS">Guilty Gear -Strive-</comboItem>
-  <comboItem value="MBTL">Melty Blood Type Lumina</comboItem>
-  </comboBox>
-  <!--commentator stuff works yay-->
-  <lineEdit id="comm1x" x="60" y="150" width="95" height="20" dataSet="players.csv" dataField="1"/>
-  <lineEdit id="comm1Pronounx" x="155" y="150" width="60" height="20" dataSet="players.csv" dataField="3" master="comm1"/>
-  <lineEdit id="comm2x" x="265" y="150" width="95" height="20" dataSet="players.csv" dataField="1"/> 
-  <lineEdit id="comm2Pronounx" x="360" y="150" width="60" height="20" dataSet="players.csv" dataField="3" master="comm2" />
-  <button type="swap" x="430" y="150" width="60" height="23" tooltip="Swap commentators" id="swap2" swapSet1="comm1,comm1Pronoun" swapSet2="comm2,comm2Pronoun">Swap</button>
- </tab>
- <tab name="Top 8 Bracket">
-    <!--Stole this line edit layout from MiggL, made some changes for layout on my Streamcontrol-->
-     <label x="25" y="6" width="90" height="10">Winners Semis</label>
-     <lineEdit id="ws1p1" x="10" y="23" width="80" height="20" /><lineEdit id="ws1p1s" x="90" y="23" width="20" height="20" />
-     <lineEdit id="ws1p2" x="10" y="45" width="80" height="20" /><lineEdit id="ws1p2s" x="90" y="45" width="20" height="20" />
-     <lineEdit id="ws2p1" x="10" y="75" width="80" height="20" /><lineEdit id="ws2p1s" x="90" y="75" width="20" height="20" />
-     <lineEdit id="ws2p2" x="10" y="97" width="80" height="20" /><lineEdit id="ws2p2s" x="90" y="97" width="20" height="20" />
-     
-     <label x="25" y="125" width="120" height="16">Losers Top 8</label>
-     <lineEdit id="ltop81p1" x="10" y="147" width="80" height="20" /><lineEdit id="ltop81p1s" x="90" y="147" width="20" height="20" />
-     <lineEdit id="ltop81p2" x="10" y="169" width="80" height="20" /><lineEdit id="ltop81p2s" x="90" y="169" width="20" height="20" />
-     <lineEdit id="ltop82p1" x="10" y="199" width="80" height="20" /><lineEdit id="ltop82p1s" x="90" y="199" width="20" height="20" />
-     <lineEdit id="ltop82p2" x="10" y="221" width="80" height="20" /><lineEdit id="ltop82p2s" x="90" y="221" width="20" height="20" />
-     
-     <label x="140" y="125" width="100" height="16">Losers Quarters</label>
-     <lineEdit id="lq1p1" x="130" y="147" width="80" height="20">WS2L</lineEdit><lineEdit id="lq1p1s" x="210" y="147" width="20" height="20" />
-     <lineEdit id="lq1p2" x="130" y="169" width="80" height="20" /><lineEdit id="lq1p2s" x="210" y="169" width="20" height="20" />
-     <lineEdit id="lq2p1" x="130" y="199" width="80" height="20">WS1L</lineEdit><lineEdit id="lq2p1s" x="210" y="199" width="20" height="20" />
-     <lineEdit id="lq2p2" x="130" y="221" width="80" height="20" /><lineEdit id="lq2p2s" x="210" y="221" width="20" height="20" />
-     
-     <label x="140" y="28" width="90" height="10">Winners Finals</label>
-     <lineEdit id="wfp1" x="130" y="45" width="80" height="20" /><lineEdit id="wfp1s" x="210" y="45" width="20" height="20" />
-     <lineEdit id="wfp2" x="130" y="66" width="80" height="20" /><lineEdit id="wfp2s" x="210" y="66" width="20" height="20" />
+		<label x="10" y="34" width="46" height="13">Player 1</label>
+		<label x="10" y="64" width="46" height="13">Player 2</label>
 
-     <label x="265" y="152" width="100" height="16">Losers Semis</label>
-     <lineEdit id="lsp1" x="250" y="174" width="80" height="20" /><lineEdit id="lsp1s" x="330" y="174" width="20" height="20" />
-     <lineEdit id="lsp2" x="250" y="194" width="80" height="20" /><lineEdit id="lsp2s" x="330" y="194" width="20" height="20" />
-     
-     <label x="385" y="152" width="100" height="16">Losers Finals</label>
-     <lineEdit id="lfp1" x="370" y="174" width="80" height="20">WFL</lineEdit><lineEdit id="lfp1s" x="450" y="174" width="20" height="20" />
-     <lineEdit id="lfp2" x="370" y="194" width="80" height="20" /><lineEdit id="lfp2s" x="450" y="194" width="20" height="20" />
-     
-     <label x="265" y="38" width="90" height="10">Grand Finals</label>
-     <lineEdit id="gfp1" x="250" y="55" width="80" height="20" /><lineEdit id="gfp1s" x="330" y="55" width="20" height="20" />
-     <lineEdit id="gfp2" x="250" y="76" width="80" height="20">LFW</lineEdit><lineEdit id="gfp2s" x="330" y="76" width="20" height="20" />
-     
-     <!--Hopefully in the top 8 page it should look for if set 2 is not blank and then not use the reset layout-->
-     <label x="395" y="38" width="60" height="10">Set 2</label>
-     <lineEdit id="gf2p1" x="370" y="55" width="80" height="20" /><lineEdit id="gf2p1s" x="450" y="55" width="20" height="20" />
-     <lineEdit id="gf2p2" x="370" y="76" width="80" height="20" /><lineEdit id="gf2p2s" x="450" y="76" width="20" height="20" />
- </tab>
-  <tab name="Intermediate">
-  <!--Bracket and schedule cam are only on int cam-->
-  <label x="10" y="9" width="46" height="13">Bracket</label><lineEdit id="Bracket" x="60" y="5" width="380" height="20" />
-  <label x="10" y="39" width="46" height="13">Schedule</label><lineEdit id="Schedule" x="60" y="35" width="380" height="20" />
-  <!--int lines show up on both Int cam and tournament cam-->
-  <label x="10" y="69" width="46" height="13">Int0</label><lineEdit id="int0" x="60" y="65" width="380" height="20" />
-  <label x="10" y="99" width="46" height="13">Int1</label><lineEdit id="int1" x="60" y="95" width="380" height="20" />
-  <label x="10" y="129" width="46" height="13">Int2</label><lineEdit id="int2" x="60" y="125" width="380" height="20" />
-  <label x="10" y="159" width="46" height="13">Int3</label><lineEdit id="int3" x="60" y="155" width="380" height="20" />
-  <label x="10" y= "189" width="46" height="13">Timer</label>
-  <!--Timer lines are only for timer cam, timer cam html handles the json-->
-  <comboBox id="timerLength" x="60" y="185" width="80" height="20" editable="1">
-	<comboItem>1:00</comboItem>
-	<comboItem selected="1">3:00</comboItem>
-	<comboItem>5:00</comboItem>
-	<comboItem>10:00</comboItem>
-	<comboItem>15:00</comboItem>
-	<comboItem>20:00</comboItem>
-  </comboBox>
-  <checkBox id="showTimer" x="150" y="185" width="80" height="20">Show timer</checkBox>
-  <button type="timestamp" id="timerStart" x="240" y="185" width="80" height="20">Start timer</button>
-  <label x="10" y="219" width="46" height="13">BRB text</label><lineEdit id="dTimeText" x="60" y="215" width="380" height="20" />
- </tab>
+		<lineEdit id="p1Name" x="60" y="30" width="185" height="20" dataSet="players.csv" dataField="1"/>
+		<lineEdit id="p2Name" x="60" y="60" width="185" height="20" dataSet="players.csv" dataField="1"/>
+
+		<spinBox id="p1Score" x="250" y="30" width="80" height="20" height="25" maximum="999" />
+		<spinBox id="p2Score" x="250" y="60" width="80" height="20" height="25" maximum="999" />
+
+		<button type="swap" x="340" y="30" width="60" height="23" tooltip="Swap the Players and Scores" id="swapPlayers" swapSet1="p1Name,p1Score" swapSet2="p2Name,p2Score">Swap</button>
+		<button type="reset" x="340" y="60" width="60" height="23" tooltip="Clear all" id="reset" reset="p1Name,p2Name,p1Score,p2Score">Clear</button>
+
+		<label x="10" y="100" width="44" height="13">Round</label>
+		<lineEdit id="round" x="60" y="94" width="180" height="20" dataSet="round.csv"/>
+
+		<label x="10" y="128" width="80" height="13">Commentators</label>
+		<lineEdit id="comm1" x="10" y="150" width="95" height="20" dataSet="players.csv" dataField="1"/>
+		<lineEdit id="comm2" x="112" y="150" width="95" height="20" dataSet="players.csv" dataField="1"/> 
+		<button type="swap" x="220" y="150" width="60" height="23" tooltip="Swap commentators" id="swapComms" swapSet1="comm1" swapSet2="comm2">Swap</button>
+	</tab>
 </layout>
