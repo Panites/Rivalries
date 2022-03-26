@@ -15,15 +15,10 @@ const processJson = () =>{
 }
 
 const checkAndUpdateField = (fieldName) => {
-	
-	// console.log(`field value:`, $(`#${fieldName}`).text());
-	// console.log(`game data value:`, gameData[fieldName]);
-
 	let tweeningField = $(`#${fieldName}`).parent();
 
 	//Check if we need to update, then do so.
-	if($(`#${fieldName}`).text() != gameData[fieldName] ) { 
-		
+	if(gameData[fieldName]  && $(`#${fieldName}`).length && $(`#${fieldName}`).text() != gameData[fieldName] ) { 
 		//Fade out
 		TweenMax.to(
 			tweeningField,
@@ -51,7 +46,7 @@ const checkAndUpdateField = (fieldName) => {
 const doStuffWithData = () => {
 	//List of all fields to check and update
 	//Should be the name in the xml/json and the field id in html
-	const fieldsToUpdate = ['p1Name', 'p2Name', 'round', 'p1Score', 'p2Score'];
+	const fieldsToUpdate = ['p1Name', 'p2Name', 'round', 'p1Score', 'p2Score', 'comm1', 'comm2'];
 
 	fieldsToUpdate.forEach(field => {
 		checkAndUpdateField(field);

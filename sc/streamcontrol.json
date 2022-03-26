@@ -1,10 +1,10 @@
 {
-    "comm1": "Comm1",
-    "comm2": "Comm2",
-    "p1Name": "Player 1",
+    "comm1": "Comm2",
+    "comm2": "Comm1",
+    "p1Name": "Player 2",
     "p1Score": "1",
-    "p2Name": "Player 2",
-    "p2Score": "0",
-    "round": "Grand Finals",
-    "timestamp": "1648256243"
+    "p2Name": "Who",
+    "p2Score": "2",
+    "round": "Losers Semi",
+    "timestamp": "1648258621"
 }
